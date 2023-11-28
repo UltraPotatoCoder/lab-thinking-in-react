@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SearchBar(onChange) {
+function SearchBar({ onChange, onInStockChange, inStockOnly }) {
   return (
     <div>
       <label htmlFor="search">Search product: </label>
@@ -9,6 +9,14 @@ function SearchBar(onChange) {
         id="search"
         placeholder="Type to search..."
         onChange={onChange}
+      />
+
+      <label htmlFor="inStock">In Stock Only:</label>
+      <input
+        type="checkbox"
+        id="inStock"
+        checked={inStockOnly}
+        onChange={onInStockChange}
       />
     </div>
   );
